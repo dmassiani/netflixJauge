@@ -44,9 +44,16 @@ $(document).ready(function(){
 		Emma = simpleStorage.get('emma');
 
 
-	}else{
-		console.log('no update');
-		
+	}
+
+	// on créé les jauges
+
+	// pour emma 
+	for (var i = 0; i < Emma.jauge; i++) {
+	   $('#emma .jauge').append( '<div class="unit">unit</div>' );
+	}
+	for (var i = 0; i < Laura.jauge; i++) {
+	   $('#laura .jauge').append( '<div class="unit">unit</div>' );
 	}
 
 });
