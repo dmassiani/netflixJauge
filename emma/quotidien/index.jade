@@ -1,5 +1,11 @@
 h1 emma 
 h2 quotidien
 
+div(id="data" data-enfant="emma")
+
 for enfant, slug in emma.checklists.quotidien
-	h2 #{ slug } - #{ enfant }
+	div(class="checklist")
+		h2 #{ slug } - #{ enfant }
+		input(type="checkbox" class="js-switch" data-jauge="#{ enfant }")
+
+button valider

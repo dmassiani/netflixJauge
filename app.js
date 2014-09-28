@@ -1,6 +1,7 @@
 
 // on vérifie que du local existe
 var aujourdhui = new Date();
+var total = 0;
 
 if( simpleStorage.get("laura") === undefined ){
 	simpleStorage.set("laura", {"jauge":0, "update": aujourdhui});
@@ -12,7 +13,6 @@ if( simpleStorage.get("emma") === undefined ){
 }
 var Emma = simpleStorage.get('emma');
 
-
 function diffdate(d1,d2){
 	var WNbJours = d2.getTime() - d1.getTime();
 	return Math.ceil(WNbJours/(1000*60*60*24)) - 1;
@@ -20,8 +20,21 @@ function diffdate(d1,d2){
 
 $(document).ready(function(){
 
+	var elems = $('.js-switch');
+	$.each(elems, function() {
+		var switchery = new Switchery( this );
+	});
+
+	elems.on( 'change', function(e){
+		if( this.checked === true ){
+			total = $(this).data('jauge') + total;
+		}else{
+			total = total - $(this).data('jauge');
+		}
+		console.log(total.toFixed(1));
+	});
+
 	var dateJauge = new Date(Laura.update);
-	// var update = diffdate(dateJauge,aujourdhui);
 
 	if( dateJauge.getDay() != aujourdhui.getDay() ){
 		// on supprime de la jauge le nombre de jours de diff
@@ -49,11 +62,27 @@ $(document).ready(function(){
 	// on créé les jauges
 
 	// pour emma 
-	for (var i = 0; i < Emma.jauge; i++) {
-	   $('#emma .jauge').append( '<div class="unit">unit</div>' );
+	var resultEmma = (Emma.jauge + "").split(".");
+	var emmaUnit = parseInt(resultEmma[0]);
+	var emmaDecimal = parseInt(resultEmma[1]);
+
+	for (var i = 0; i < emmaUnit; i++) {
+	   $('#emma .jauge').prepend( '<div class="unit">unit</div>' );
+	   if( i === emmaUnit-1 ){
+	   		$('#emma .jauge').prepend( '<div class="unit h' + emmaDecimal + '">' + emmaDecimal + '</div>' );
+	   }
 	}
-	for (var i = 0; i < Laura.jauge; i++) {
-	   $('#laura .jauge').append( '<div class="unit">unit</div>' );
+
+	// pour laura 
+	var resultLaura = (Laura.jauge + "").split(".");
+	var lauraUnit = parseInt(resultLaura[0]);
+	var lauraDecimal = parseInt(resultLaura[1]);
+
+	for (var i = 0; i < lauraUnit; i++) {
+	   $('#laura .jauge').prepend( '<div class="unit">unit</div>' );
+	   if( i === lauraUnit-1 ){
+	   		$('#laura .jauge').prepend( '<div class="unit h' + lauraDecimal + '">' + lauraDecimal + '</div>' );
+	   }
 	}
 
 });
