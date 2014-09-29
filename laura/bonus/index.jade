@@ -1,16 +1,19 @@
-h1 laura 
-h2 bonus
+div.checklist
+	h1 Bonnus pour Laura 
 
-div(id="data" data-enfant="laura")
+	div(id="data" data-enfant="laura")
 
-aside.col-3
-	div#laura
-		div.jauge
-		div.verre
-		div.light
+	aside.col-3
+		div#laura
+			div.jauge
+			div.verre
+			div.ombre
+			div.light
+			div.reflet1
+			div.reflet2
 
-aside.col-6
-	for enfant, slug in laura.checklists.bonus
-		div(class="checklist")
-			div.row #{ slug } - #{ enfant }
-				input(type="checkbox" class="js-switch" data-jauge="#{ enfant }")
+	aside.col-6
+		for enfant, slug in laura.checklists.bonus
+			div(class="checklist")
+				div.row #{ slug } - #{ enfant }
+					input(type="checkbox" class="js-switch" data-jauge="#{ enfant }")

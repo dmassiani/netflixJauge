@@ -32,10 +32,12 @@ function updateJauge(){
 	var decimal = parseInt(result[1]);
 	$('#'+enfant+' .jauge').empty();
 
+	if( unit === 0 )$('#'+enfant+' .jauge').addClass('vide');
+
 	for (var i = 0; i < unit; i++) {
 	   $('#'+enfant+' .jauge').prepend( '<div class="unit"></div>' );
 	   if( i === unit-1 && decimal ){
-	   		$('#'+enfant+' .jauge').prepend( '<div class="unit h' + decimal + '"></div>' );
+	   		$('#'+enfant).prepend( '<div class="unit h' + decimal + '"></div>' );
 	   }
 	}
 
@@ -100,6 +102,7 @@ $(document).ready(function(){
 	var resultEmma = (Emma.jauge + "").split(".");
 	var emmaUnit = parseInt(resultEmma[0]);
 	var emmaDecimal = parseInt(resultEmma[1]);
+	if( emmaUnit === 0 )$('#emma').addClass('vide');
 
 	for (var i = 0; i < emmaUnit; i++) {
 	   $('#emma .jauge').prepend( '<div class="unit"></div>' );
@@ -112,6 +115,7 @@ $(document).ready(function(){
 	var resultLaura = (Laura.jauge + "").split(".");
 	var lauraUnit = parseInt(resultLaura[0]);
 	var lauraDecimal = parseInt(resultLaura[1]);
+	if( lauraUnit === 0 )$('#laura').addClass('vide');
 
 	for (var i = 0; i < lauraUnit; i++) {
 	   $('#laura .jauge').prepend( '<div class="unit"></div>' );

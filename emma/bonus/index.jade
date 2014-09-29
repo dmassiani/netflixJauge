@@ -1,16 +1,19 @@
-h1 emma 
-h2 bonus
+div.checklist
+	h1 Bonus pour Emma
 
-div(id="data" data-enfant="emma")
+	div(id="data" data-enfant="emma")
 
-aside.col-3
-	div#emma
-		div.jauge
-		div.verre
-		div.light
+	aside.col-3
+		div#emma
+			div.jauge
+			div.verre
+			div.ombre
+			div.light
+			div.reflet1
+			div.reflet2
 
-aside.col-6
-	for enfant, slug in emma.checklists.bonus
-		div(class="checklist")
-			div.row #{ slug } - #{ enfant }
-				input(type="checkbox" class="js-switch" data-jauge="#{ enfant }")
+	aside.col-6
+		for enfant, slug in emma.checklists.bonus
+			div(class="checklist")
+				div.row #{ slug } - #{ enfant }
+					input(type="checkbox" class="js-switch" data-jauge="#{ enfant }")
