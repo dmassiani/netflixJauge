@@ -2,6 +2,9 @@
 // on vérifie que du local existe
 var aujourdhui = new Date();
 var total = 0;
+var grandTotal = 0;
+var enfant = $('#data').data('enfant');
+var jaugeNouvelle;
 
 if( simpleStorage.get("laura") === undefined ){
 	simpleStorage.set("laura", {"jauge":0, "update": aujourdhui});
@@ -18,6 +21,26 @@ function diffdate(d1,d2){
 	return Math.ceil(WNbJours/(1000*60*60*24)) - 1;
 }
 
+function updateJauge(){
+
+	simpleStorage.set( enfant , {"jauge": jaugeNouvelle.toFixed(1), "update": aujourdhui});
+	Laura = simpleStorage.get('laura');
+	Emma = simpleStorage.get('emma');
+
+	var result = (jaugeNouvelle.toFixed(1) + "").split(".");
+	var unit = parseInt(result[0]);
+	var decimal = parseInt(result[1]);
+	$('#'+enfant+' .jauge').empty();
+
+	for (var i = 0; i < unit; i++) {
+	   $('#'+enfant+' .jauge').prepend( '<div class="unit"></div>' );
+	   if( i === unit-1 && decimal ){
+	   		$('#'+enfant+' .jauge').prepend( '<div class="unit h' + decimal + '"></div>' );
+	   }
+	}
+
+}
+
 $(document).ready(function(){
 
 	var elems = $('.js-switch');
@@ -26,12 +49,24 @@ $(document).ready(function(){
 	});
 
 	elems.on( 'change', function(e){
-		if( this.checked === true ){
-			total = $(this).data('jauge') + total;
+
+		if( enfant === 'laura' ){
+			var jaugeActuel = Laura.jauge;
 		}else{
-			total = total - $(this).data('jauge');
+			var jaugeActuel = Emma.jauge;
 		}
-		console.log(total.toFixed(1));
+
+		if( this.checked === true ){
+			jaugeNouvelle = parseFloat(jaugeActuel) + $(this).data('jauge');
+		}else{
+			jaugeNouvelle = parseFloat(jaugeActuel) - $(this).data('jauge');
+		}
+
+		jaugeNouvelle.toFixed(1);
+
+		if( jaugeNouvelle > 10 )jaugeNouvelle = 10;
+
+		updateJauge();
 	});
 
 	var dateJauge = new Date(Laura.update);
@@ -67,9 +102,9 @@ $(document).ready(function(){
 	var emmaDecimal = parseInt(resultEmma[1]);
 
 	for (var i = 0; i < emmaUnit; i++) {
-	   $('#emma .jauge').prepend( '<div class="unit">unit</div>' );
-	   if( i === emmaUnit-1 ){
-	   		$('#emma .jauge').prepend( '<div class="unit h' + emmaDecimal + '">' + emmaDecimal + '</div>' );
+	   $('#emma .jauge').prepend( '<div class="unit"></div>' );
+	   if( i === emmaUnit-1 && emmaDecimal ){
+	   		$('#emma .jauge').prepend( '<div class="unit h' + emmaDecimal + '"></div>' );
 	   }
 	}
 
@@ -79,9 +114,9 @@ $(document).ready(function(){
 	var lauraDecimal = parseInt(resultLaura[1]);
 
 	for (var i = 0; i < lauraUnit; i++) {
-	   $('#laura .jauge').prepend( '<div class="unit">unit</div>' );
-	   if( i === lauraUnit-1 ){
-	   		$('#laura .jauge').prepend( '<div class="unit h' + lauraDecimal + '">' + lauraDecimal + '</div>' );
+	   $('#laura .jauge').prepend( '<div class="unit"></div>' );
+	   if( i === lauraUnit-1 && lauraDecimal ){
+	   		$('#laura .jauge').prepend( '<div class="unit h' + lauraDecimal + '"></div>' );
 	   }
 	}
 

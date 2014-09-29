@@ -1,0 +1,39 @@
+{
+  "name": "neat",
+  "repo": "harp/neat",
+  "description": "For Harp. A fluid grid framework built upon Bourbon and Sass.",
+  "version": "1.5.0",
+  "keywords": [
+    "harp",
+    "scss",
+    "sass",
+    "bourbon",
+    "neat"
+  ],
+  "dependencies": {
+    "harp/bourbon": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "files": [
+    "scss/_neat-helpers.scss",
+    "scss/_neat.scss",
+    "scss/functions/_new-breakpoint.scss",
+    "scss/functions/_private.scss",
+    "scss/grid/_fill-parent.scss",
+    "scss/grid/_grid.scss",
+    "scss/grid/_media.scss",
+    "scss/grid/_omega.scss",
+    "scss/grid/_outer-container.scss",
+    "scss/grid/_pad.scss",
+    "scss/grid/_private.scss",
+    "scss/grid/_reset.scss",
+    "scss/grid/_row.scss",
+    "scss/grid/_shift.scss",
+    "scss/grid/_span-columns.scss",
+    "scss/grid/_to-deprecate.scss",
+    "scss/grid/_visual-grid.scss",
+    "scss/settings/_grid.scss",
+    "scss/settings/_visual-grid.scss"
+  ]
+}

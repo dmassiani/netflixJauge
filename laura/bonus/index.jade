@@ -3,9 +3,12 @@ h2 bonus
 
 div(id="data" data-enfant="laura")
 
-for enfant, slug in laura.checklists.bonus
-	div(class="checklist")
-		h2 #{ slug } - #{ enfant }
-		input(type="checkbox" class="js-switch" data-jauge="#{ enfant }")
+aside.col-3
+	div#laura
+		div.jauge
 
-button valider
+aside.col-6
+	for enfant, slug in laura.checklists.bonus
+		div(class="checklist")
+			div.row #{ slug } - #{ enfant }
+				input(type="checkbox" class="js-switch" data-jauge="#{ enfant }")

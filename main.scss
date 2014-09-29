@@ -1,0 +1,77 @@
+@import "components/harp-bourbon/scss/bourbon";
+@import "components/harp-neat/scss/neat";
+
+body{
+  font-family: "Helvetica";
+  background: #f4f4f7;
+  color: #444;
+  margin: 0;
+}
+
+.container {
+  @include outer-container;
+  .col-3 { 
+    @include span-columns(3);
+  }
+  .col-6 { 
+    @include span-columns(6);
+  }
+  .row{
+    min-height: 50px;
+  }
+}
+
+.switchery{
+  float: right;
+}
+
+// jauge
+#emma,
+#laura{
+  position: relative;
+    background: #333;
+    height: 300px;
+    width: 80px;
+    display: block;    
+  .jauge{
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    display: block;
+    .unit{
+      height: 26px;
+      margin-bottom: 4px;
+      margin-left: 4px;
+      background: rgb(0, 255, 245);
+      width: 72px;
+      &.h1{
+      height: 2px;
+      }
+      &.h2{
+      height: 5px;
+      }
+      &.h3{
+      height: 7px;
+      }
+      &.h4{
+      height: 10px;
+      }
+      &.h5{
+      height: 13px;
+      }
+      &.h6{
+      height: 15px;
+      }
+      &.h7{
+      height: 18px;
+      }
+      &.h8{
+      height: 21px;
+      }
+      &.h9{
+      height: 24px;
+      }
+    }
+  }
+}
