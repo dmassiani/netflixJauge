@@ -3,9 +3,9 @@ $max-width: em(780) !default; // Max-width of the outer container
 @import "components/harp-neat/scss/neat";
 
 @-webkit-keyframes pulse {
-  from { box-shadow: 0px 0px 56px rgba(239, 59, 110, 0.8); }
-  50% { box-shadow: 0px 0px 56px rgba(239, 59, 110, 0.1); }
-  to { box-shadow: 0px 0px 56px rgba(239, 59, 110, 0.8); }
+  from { box-shadow: 0px 0px 56px rgba(239, 59, 110, 0.1); }
+  50% { box-shadow: 0px 0px 56px rgba(239, 59, 110, 0.7); }
+  to { box-shadow: 0px 0px 56px rgba(239, 59, 110, 0.1); }
 }
 
 body{

@@ -33,9 +33,13 @@ function updateJauge(){
 	$('#'+enfant+' .jauge').empty();
 
 	if( unit === 0 ){
-		$('#'+enfant+' .jauge').addClass('vide');
+		if( decimal === 0 ){
+			$('#'+enfant).addClass('vide');
+		}else{
+			$('#'+enfant).removeClass('vide');
+		}
 	}else{
-		$('#'+enfant+' .jauge').removeClass('vide');
+		$('#'+enfant).removeClass('vide');
 	}
 
 	for (var i = 0; i < unit; i++) {
