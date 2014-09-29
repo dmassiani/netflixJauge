@@ -5,16 +5,15 @@
 			"checklists":{
 
 				"quotidien": {
-					"Premier checklist": "0.5",
-					"Seconde checklist": "0.4",
-					"Troisiueme checklist": "0.2",
-					"quatrieme checklist": "0.5"
+					"S'est arrêté quand on lui a demandé": "0.8",
+					"N'a pas réclamé de brioche": "0.2",
+					"S'est bien brossé les dents": "0.4",
+					"Est allée faire sa toilette avant 8h10": "0.2",
+					"A rangé ses chaussures en rentrant": "0.1"
 				},
 				"bonus": {
-					"Premier checklist": "0.5",
-					"Seconde checklist": "0.4",
-					"Troisiueme checklist": "0.2",
-					"quatrieme checklist": "0.5"
+					"A débarrasser son petit dej": "0.2",
+					"A mit la table spontanément": "0.8"
 				}
 
 			}
@@ -24,16 +23,16 @@
 			"checklists":{
 
 				"quotidien": {
-					"Premier checklist": "0.5",
-					"Seconde checklist": "0.4",
-					"Troisiueme checklist": "0.2",
-					"quatrieme checklist": "0.5"
+					"A préparé son goûté la veille": "0.4",
+					"Obéir du premier coup": "0.7",
+					"Faire les devoirs à son bureau": "0.5",
+					"Aucun cri sur Maman": "0.2",
+					"Est allée faire sa toilette avant 8h10": "0.2",
+					"A rangé ses chaussures en rentrant": "0.1"
 				},
 				"bonus": {
-					"Premier checklist": "0.5",
-					"Seconde checklist": "0.4",
-					"Troisiueme checklist": "0.2",
-					"quatrieme checklist": "0.5"
+					"A débarrasser son petit dej": "0.2",
+					"A mit la table spontanément": "0.8"
 				}
 
 			}
