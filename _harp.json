@@ -9,11 +9,14 @@
 					"N'a pas réclamé de brioche": "0.2",
 					"S'est bien brossé les dents": "0.4",
 					"Est allée faire sa toilette avant 8h10": "0.2",
-					"A rangé ses chaussures en rentrant": "0.1"
+					"A rangé ses chaussures en rentrant": "0.1",
+					"Ne s'est pas disputé avec sa soeur": "0.5",
+					"N'a pas pété à table": "0.2"
 				},
 				"bonus": {
 					"A débarrasser son petit dej": "0.2",
-					"A mit la table spontanément": "0.8"
+					"A mit la table spontanément": "0.8",
+					"A eu bon caractère": "0.4"
 				}
 
 			}
@@ -28,11 +31,15 @@
 					"Faire les devoirs à son bureau": "0.5",
 					"Aucun cri sur Maman": "0.2",
 					"Est allée faire sa toilette avant 8h10": "0.2",
-					"A rangé ses chaussures en rentrant": "0.1"
+					"A rangé ses chaussures en rentrant": "0.1",
+					"Ne s'est pas disputé avec sa soeur": "0.5",
+					"A mangé en fermant la bouche": "0.2"
 				},
 				"bonus": {
 					"A débarrasser son petit dej": "0.2",
-					"A mit la table spontanément": "0.8"
+					"A mit la table spontanément": "0.8",
+					"A eu bon caractère": "0.6",
+					"N'a pas négocié quoique ce soit": "0.6"
 				}
 
 			}
