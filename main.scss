@@ -2,6 +2,12 @@
 $max-width: em(780) !default; // Max-width of the outer container
 @import "components/harp-neat/scss/neat";
 
+@-webkit-keyframes pulse {
+  from { box-shadow: 0px 0px 56px rgba(239, 59, 110, 0.8); }
+  50% { box-shadow: 0px 0px 56px rgba(239, 59, 110, 0.1); }
+  to { box-shadow: 0px 0px 56px rgba(239, 59, 110, 0.8); }
+}
+
 body{
 	font-family: "Noto Sans", sans-serif;
 	background: #444343;
@@ -92,9 +98,12 @@ header{
 		border-radius: 100px;
 		overflow: hidden;
 		border: 4px solid rgba(199, 232, 255, 0.2);
-		box-shadow: 0px 0px 56px rgba(239, 59, 110, 0.7);
+		-webkit-animation-name: pulse;
+		-webkit-animation-duration: 4s;
+		-webkit-animation-iteration-count: infinite;
 		&.vide{
 			box-shadow: none;
+			-webkit-animation: none;
 		}
 	.verre{
 		background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0.13) 49%, rgba(0,0,0,0.33) 71%, rgba(0,0,0,0.78) 100%);
