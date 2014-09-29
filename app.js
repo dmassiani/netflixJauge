@@ -45,7 +45,7 @@ $(document).ready(function(){
 
 	var elems = $('.js-switch');
 	$.each(elems, function() {
-		var switchery = new Switchery( this, {color: '#00fff5'} );
+		var switchery = new Switchery( this, {color: '#ef3b6e'} );
 	});
 
 	elems.on( 'change', function(e){
