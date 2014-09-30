@@ -11,7 +11,8 @@
 					"Est allée faire sa toilette avant 8h10": "0.2",
 					"A rangé ses chaussures en rentrant": "0.1",
 					"Ne s'est pas disputé avec sa soeur": "0.5",
-					"N'a pas pété à table": "0.2"
+					"N'a pas pété à table": "0.2",
+					"Faire le lit": "0.4"
 				},
 				"bonus": {
 					"A débarrasser son petit dej": "0.2",
@@ -33,7 +34,8 @@
 					"Est allée faire sa toilette avant 8h10": "0.2",
 					"A rangé ses chaussures en rentrant": "0.1",
 					"Ne s'est pas disputé avec sa soeur": "0.5",
-					"A mangé en fermant la bouche": "0.2"
+					"A mangé en fermant la bouche": "0.2",
+					"Faire le lit": "0.4"
 				},
 				"bonus": {
 					"A débarrasser son petit dej": "0.2",
